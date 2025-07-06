@@ -5,7 +5,7 @@ import { db } from "../../config/Firebase";
 import { collection, deleteDoc, doc, getDocs, query } from "firebase/firestore";
 import { useEffect, useState } from "react";
 import { Link } from "react-router";
-import { ArchiveX, ChevronRightIcon, Delete, DeleteIcon } from "lucide-react";
+import { ArchiveX,  } from "lucide-react";
 import { toast } from "react-toastify";
 
 interface banner {
