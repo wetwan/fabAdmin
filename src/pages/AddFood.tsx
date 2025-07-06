@@ -125,6 +125,7 @@ const AddFood = () => {
             placeholder="food name"
             className="focus-visible:border-2 focus-visible:border-green-400 focus-visible:ring-[0px] capitalize "
             value={name}
+            required
             onChange={(e) => setName(e.target.value)}
           />
         </div>
@@ -133,6 +134,7 @@ const AddFood = () => {
           <Input
             type="file"
             id="image"
+            required
             className="focus-visible:border-2 focus-visible:border-green-400 focus-visible:ring-[0px] capitalize "
             onChange={(e) => setFile(e.target.files?.[0] || null)}
           />
@@ -144,6 +146,7 @@ const AddFood = () => {
             id="ingredients"
             placeholder="Type food ingredients here."
             value={ingredients}
+            required
             onChange={(e) => setIngredients(e.target.value)}
             className="focus-visible:border-2 focus-visible:border-green-400 focus-visible:ring-[0px] capitalize "
           />
@@ -154,6 +157,7 @@ const AddFood = () => {
             id="Nutrient"
             placeholder="Type food Nutrient here."
             value={Nutrient}
+            required
             onChange={(e) => setNutrient(e.target.value)}
             className="focus-visible:border-2 focus-visible:border-green-400 focus-visible:ring-[0px] capitalize "
           />
@@ -164,6 +168,7 @@ const AddFood = () => {
             id="discription"
             placeholder="Type food Discription here."
             value={discription}
+            required
             onChange={(e) => setDiscription(e.target.value)}
             className="focus-visible:border-2 focus-visible:border-green-400 focus-visible:ring-[0px] capitalize "
           />
@@ -172,6 +177,7 @@ const AddFood = () => {
           <div className="grid w-full max-w-sm items-center gap-3">
             <Label htmlFor="category">Category</Label>
             <Select
+              required
               value={categoryy}
               onValueChange={(value) => setCategoryy(value)}
             >
@@ -195,6 +201,7 @@ const AddFood = () => {
             <Input
               id="price"
               type="number"
+              required
               value={price}
               onChange={(value) => setPrice(value.target.value)}
               placeholder="Price"
@@ -210,6 +217,7 @@ const AddFood = () => {
             defaultValue="Yes"
             className="flex items-center gap-5"
             onValueChange={(value) => sethalal(value)}
+            required
           >
             <div className="flex items-center space-x-2">
               <RadioGroupItem value="Yes" id="yes" />

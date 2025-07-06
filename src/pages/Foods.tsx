@@ -7,7 +7,7 @@ import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router";
 import { Heart } from "lucide-react";
 
-interface Food {
+export interface Food {
   like: [];
   price: number;
   id: string;
@@ -62,7 +62,7 @@ const Foods = () => {
           <div
             key={food.id}
             className="w-full  border border-red-500 rounded-md p-3 flex flex-col"
-            onClick={() => navigate(`/food/${food.name}`)}
+            onClick={() => navigate(`/food/${food.id}`)}
           >
             <img
               src={food.image}

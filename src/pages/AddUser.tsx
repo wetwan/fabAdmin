@@ -90,6 +90,7 @@ const AddUser = () => {
             type="text"
             id="firstname"
             placeholder="first name"
+            required
             className="focus-visible:border-2 focus-visible:border-green-400 focus-visible:ring-[0px] capitalize "
             value={firstname}
             onChange={(e) => setFirstname(e.target.value)}
@@ -99,6 +100,7 @@ const AddUser = () => {
           <Label htmlFor="lastname">Last Name</Label>
           <Input
             type="text"
+            required
             id="lastname"
             placeholder="last name"
             className="focus-visible:border-2 focus-visible:border-green-400 focus-visible:ring-[0px] capitalize "
@@ -110,6 +112,7 @@ const AddUser = () => {
           <Label htmlFor="email">Email</Label>
           <Input
             type="email"
+            required
             id="email"
             placeholder="Email"
             className="focus-visible:border-2 focus-visible:border-green-400 focus-visible:ring-[0px]"
@@ -122,13 +125,14 @@ const AddUser = () => {
           <Input
             type="password"
             id="password"
+            required
             placeholder="password"
             className="focus-visible:border-2 focus-visible:border-green-400 focus-visible:ring-[0px] capitalize "
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
         </div>
-        <Select value={role} onValueChange={(value) => setRole(value)}>
+        <Select required value={role} onValueChange={(value) => setRole(value)}>
           <Label htmlFor="password">Role</Label>
           <SelectTrigger className="w-[180px] focus-visible:border-2 focus-visible:border-green-400 focus-visible:ring-[0px] capitalize ">
             <SelectValue placeholder="Select a role" />
