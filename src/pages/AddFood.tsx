@@ -30,7 +30,7 @@ const AddFood = () => {
   const [file, setFile] = useState<File | null>(null);
   const [ingredients, setIngredients] = useState<string>("");
   const [Nutrient, setNutrient] = useState<string>("");
-  const [discription, setDiscription] = useState<string>("");
+  const [description, setDescription] = useState<string>("");
   const [categoryy, setCategoryy] = useState<string>("");
   const [halal, sethalal] = useState<string>("yes");
 
@@ -90,7 +90,7 @@ const AddFood = () => {
         name: name,
         image: imageUrl,
         ingredients: ingredients,
-        discription: discription,
+        description: description, 
         halal: halal,
         nutrient: Nutrient,
         category: categoryy,
@@ -163,13 +163,13 @@ const AddFood = () => {
           />
         </div>
         <div className="grid w-full max-w-sm items-center gap-3">
-          <Label htmlFor="discription">Food Discription </Label>
+          <Label htmlFor="description">Food Description </Label>
           <Textarea
-            id="discription"
-            placeholder="Type food Discription here."
-            value={discription}
+            id="description"
+            placeholder="Type food Description here."
+            value={description}
             required
-            onChange={(e) => setDiscription(e.target.value)}
+            onChange={(e) => setDescription(e.target.value)}
             className="focus-visible:border-2 focus-visible:border-green-400 focus-visible:ring-[0px] capitalize "
           />
         </div>

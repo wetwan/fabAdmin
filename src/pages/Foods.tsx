@@ -18,6 +18,14 @@ export interface Food {
   category: string;
   ingredients: string;
   nutrient: string;
+  reviews: [
+    {
+      message: string;
+      userName: string;
+      userImage: string;
+      time: string;
+    }
+  ];
 }
 
 const Foods = () => {

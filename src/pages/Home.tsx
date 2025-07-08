@@ -138,7 +138,7 @@ const Home = () => {
             </NavLink>
           </ul>
         </div>
-        <div className="w-[80%] mb-24   ">
+        <div className="w-[80%] mb-24 ">
           <Outlet />
         </div>
       </div>
