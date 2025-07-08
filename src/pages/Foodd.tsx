@@ -9,7 +9,9 @@ import { ChevronLeft, Heart, Soup } from "lucide-react";
 import { images } from "@/assets";
 import { TbCurrencyNaira } from "react-icons/tb";
 
-const Food = () => {
+
+const Foodd = () => {
+
   const { id } = useParams();
 
   const [Loading, setLoading] = useState(false);
@@ -43,7 +45,6 @@ const Food = () => {
             reviews: data.reviews || [],
           };
           setFoodData(item);
-          console.log(item);
         } else {
           toast.error("Error" + "Food item not found.");
         }
@@ -167,4 +168,6 @@ const Food = () => {
   );
 };
 
-export default Food;
+
+
+export default Foodd

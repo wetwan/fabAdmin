@@ -46,7 +46,6 @@ const Foods = () => {
       }));
 
       setFood(foods);
-      console.log(foods);
     } catch (error) {
       console.error("Failed to fetch food:", error);
     } finally {

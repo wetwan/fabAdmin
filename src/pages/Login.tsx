@@ -35,7 +35,7 @@ const Login = () => {
         toast.success("Login successful");
         navigate(`/food`);
       } else {
-        console.log("Sign-in response", result);
+        toast.error("Sign-in response" + result);
       }
     } catch (err: unknown) {
       type ClerkError = { errors: { message: string }[] };

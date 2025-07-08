@@ -7,7 +7,7 @@ import {
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Foods from "./pages/Foods";
-import Food from "./pages/Food";
+
 import Categories from "./pages/Categories";
 import Category from "./pages/Category";
 import Pendings from "./pages/Pendings";
@@ -23,6 +23,7 @@ import AddUser from "./pages/AddUser";
 import { ToastContainer } from "react-toastify";
 import { useAuth } from "@clerk/clerk-react";
 import { useEffect } from "react";
+import Foodd from "./pages/Foodd";
 
 const ProtectedRoute = ({ children }: { children: React.ReactNode }) => {
   const { isSignedIn, isLoaded } = useAuth();
@@ -35,7 +36,7 @@ const ProtectedRoute = ({ children }: { children: React.ReactNode }) => {
   }, [isLoaded, isSignedIn, navigate]);
 
   if (!isLoaded) return null;
-  if (!isSignedIn) return null; // avoid flash before redirect
+  if (!isSignedIn) return null; 
 
   return <>{children}</>;
 };
@@ -54,7 +55,7 @@ const App = () => {
           }
         >
           <Route path="food" element={<Foods />} />
-          <Route path="food/:id" element={<Food />} />
+          <Route path="food/:id" element={<Foodd />} />
           <Route path="category" element={<Categories />} />
           <Route path="category/:id" element={<Category />} />
           <Route path="pending" element={<Pendings />} />
