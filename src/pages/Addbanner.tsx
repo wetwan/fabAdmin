@@ -8,6 +8,7 @@ import { Label } from "@/components/ui/label";
 import { addDoc, collection } from "firebase/firestore";
 import { db } from "../../config/Firebase";
 import { useNavigate } from "react-router";
+import { Loader2Icon } from "lucide-react";
 
 const Addbanner = () => {
   const [banner, setBanner] = useState<File | null>(null);
@@ -58,8 +59,8 @@ const Addbanner = () => {
   };
 
   return (
-    <div className="w-3/4 mx-auto shadow shadow-green-400 p-5 rounded-md mt-10">
-      <h2 className="my-5 ml-7 font-extrabold">Add banner </h2>
+    <div className="sm:w-3/4 mx-auto sm:shadow shadow-green-400 p-5 sm:rounded-md sm:mt-10">
+      <h2 className="my-5 sm:ml-7 font-extrabold">Add banner </h2>
       <form
         onSubmit={handleSubmit}
         className="flex flex-col gap-5 justify-center items-center"
@@ -83,8 +84,22 @@ const Addbanner = () => {
             onChange={(e) => setBanner(e.target.files?.[0] || null)}
           />
         </div>
-
-        <Button disabled={uploading}> submit</Button>
+        {uploading ? (
+          <Button
+            variant="secondary"
+            disabled={uploading}
+            className="bg-green-200 py-7 mt-5 text-white font-bold text-xl"
+          >
+            <Loader2Icon className="animate-spin" /> uploading
+          </Button>
+        ) : (
+          <Button
+            variant="secondary"
+            className="bg-green-500 py-7 mt-5 text-white font-bold text-xl hover:bg-green-400"
+          >
+            Create Banner
+          </Button>
+        )}
       </form>
     </div>
   );

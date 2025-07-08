@@ -61,8 +61,8 @@ const AddCategory = () => {
   };
 
   return (
-    <div className="w-3/4 mx-auto shadow shadow-green-400 p-5 rounded-md mt-1">
-      <h2 className="my-5 ml-7 font-extrabold">Add category </h2>
+    <div className="sm:w-3/4 mx-auto sm:shadow shadow-green-400 p-5 sm:rounded-md mt-1">
+      <h2 className="my-5 sm:ml-7 font-extrabold">Add category </h2>
       <form
         onSubmit={handleSubmit}
         className="flex flex-col gap-5 justify-center items-center"

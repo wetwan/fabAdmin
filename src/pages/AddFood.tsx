@@ -90,7 +90,7 @@ const AddFood = () => {
         name: name,
         image: imageUrl,
         ingredients: ingredients,
-        description: description, 
+        description: description,
         halal: halal,
         nutrient: Nutrient,
         category: categoryy,
@@ -111,8 +111,8 @@ const AddFood = () => {
   }, []);
 
   return (
-    <div className="w-3/4 mx-auto shadow shadow-green-400 p-5 rounded-md mt-1">
-      <h2 className="my-5 ml-7 font-extrabold">Add food </h2>
+    <div className="md:w-3/4 mx-auto sm:shadow md:shadow-green-400 md:p-5 p-2 md:rounded-md mt-1">
+      <h2 className="my-5 sm:ml-7 font-extrabold">Add food </h2>
       <form
         onSubmit={handleSubmit}
         className="flex flex-col gap-5 justify-center items-center"
@@ -173,7 +173,7 @@ const AddFood = () => {
             className="focus-visible:border-2 focus-visible:border-green-400 focus-visible:ring-[0px] capitalize "
           />
         </div>
-        <div className="flex items-center justify-between">
+        <div className="sm:flex-row flex-col gap-y-4 items-center sm:justify-between">
           <div className="grid w-full max-w-sm items-center gap-3">
             <Label htmlFor="category">Category</Label>
             <Select
@@ -196,7 +196,7 @@ const AddFood = () => {
               </SelectContent>
             </Select>
           </div>
-          <div className="grid w-full max-w-sm items-center gap-3">
+          <div className="grid w-full max-w-sm items-center gap-3 mt-4 sm:mt-0">
             <Label htmlFor="price">Price</Label>
             <Input
               id="price"

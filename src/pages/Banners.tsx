@@ -58,7 +58,7 @@ const Banners = () => {
           <Link to="/addbanner">Add Banner</Link>
         </Button>
       </div>
-      <div className="flex items-center gap-2 ">
+      <div className="flex items-center gap-2 flex-wrap">
         {slider.map((item) => (
           <div
             key={item.id}

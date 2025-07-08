@@ -10,10 +10,14 @@ import {
 
 import { Button } from "@/components/ui/button";
 import { useClerk } from "@clerk/clerk-react";
+import { TbBowl, TbCategoryFilled } from "react-icons/tb";
+import { MdOutlinePendingActions, MdPhoto } from "react-icons/md";
+import { TiTick } from "react-icons/ti";
+import { User } from "lucide-react";
 
 const Home = () => {
   const navigate = useNavigate();
-  
+
   const { signOut } = useClerk();
   return (
     <div className="min-h-screen p-2 lg:w-5/6 mx-auto">
@@ -68,7 +72,7 @@ const Home = () => {
                 }`
               }
             >
-              {/* <BsPenFill className="p-1 w-8 h-8" /> */}
+              <TbBowl className="p-1 w-8 h-8" />
               <span className="max-md:hidden">foods</span>
             </NavLink>
             <NavLink
@@ -81,7 +85,7 @@ const Home = () => {
                 }`
               }
             >
-              {/* <BsPenFill className="p-1 w-8 h-8" /> */}
+              <TbCategoryFilled className="p-1 w-8 h-8" />
               <span className="max-md:hidden">categories</span>
             </NavLink>
             <NavLink
@@ -94,7 +98,7 @@ const Home = () => {
                 }`
               }
             >
-              {/* <BsPenFill className="p-1 w-8 h-8" /> */}
+              <MdOutlinePendingActions className="p-1 w-8 h-8" />
               <span className="max-md:hidden">pending</span>
             </NavLink>
             <NavLink
@@ -107,7 +111,7 @@ const Home = () => {
                 }`
               }
             >
-              {/* <BsPenFill className="p-1 w-8 h-8" /> */}
+              <TiTick className="p-1 w-8 h-8" />
               <span className="max-md:hidden">completed</span>
             </NavLink>
             <NavLink
@@ -120,7 +124,7 @@ const Home = () => {
                 }`
               }
             >
-              {/* <BsPenFill className="p-1 w-8 h-8" /> */}
+              <MdPhoto  className="p-1 w-8 h-8" />
               <span className="max-md:hidden">banner</span>
             </NavLink>
             <NavLink
@@ -133,7 +137,7 @@ const Home = () => {
                 }`
               }
             >
-              {/* <BsPenFill className="p-1 w-8 h-8" /> */}
+              <User  className="p-1 w-8 h-8" />
               <span className="max-md:hidden">add user</span>
             </NavLink>
           </ul>

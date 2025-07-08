@@ -81,7 +81,7 @@ const AddUser = () => {
   };
 
   return (
-    <div className="w-[400px] mx-auto mt-10 shadow-xl rounded-md shadow-stone-300 p-4">
+    <div className="md:w-[400px] mx-auto md:mt-10 md:shadow-xl md:rounded-md md:shadow-stone-300 p-4">
       <h2 className="my-10 font-extrabold">Add employee </h2>
       <form onSubmit={handleSignUp} className="flex flex-col gap-4">
         <div className="grid w-full max-w-sm items-center gap-3">
