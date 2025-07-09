@@ -1,9 +1,9 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
+
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { Button } from "@/components/ui/button";
 import { db } from "../../config/Firebase";
 import { collection, getDocs, query } from "firebase/firestore";
-import React, { useEffect, useState } from "react";
+import  { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router";
 import { Heart } from "lucide-react";
 

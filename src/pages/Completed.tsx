@@ -40,34 +40,6 @@ const Completed = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const navigate = useNavigate();
 
-  const getTransaction = async () => {
-    setIsLoading(true);
-    setTransaction([]);
-
-    try {
-      const q = query(
-        collection(db, "transactions"),
-        where("deliveryStatus", "==", "completed"),
-        orderBy("orderTime", "desc")
-      );
-      const querySnapshot = await getDocs(q);
-
-      const transactions = querySnapshot.docs.map((doc) => ({
-        id: doc.id,
-        ...(doc.data() as Omit<Order, "id">),
-      }));
-      setTransaction(transactions);
-    } catch (error) {
-      console.error("Failed to fetch transaction:", error);
-    } finally {
-      setIsLoading(false);
-    }
-  };
-
-  useEffect(() => {
-    getTransaction();
-  }, []);
-
   const [sorting, setSorting] = React.useState<SortingState>([]);
   const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>(
     []
@@ -150,6 +122,34 @@ const Completed = () => {
       rowSelection,
     },
   });
+
+  const getTransaction = async () => {
+    setIsLoading(true);
+    setTransaction([]);
+
+    try {
+      const q = query(
+        collection(db, "transactions"),
+        where("deliveryStatus", "==", "completed"),
+        orderBy("orderTime", "desc")
+      );
+      const querySnapshot = await getDocs(q);
+
+      const transactions = querySnapshot.docs.map((doc) => ({
+        id: doc.id,
+        ...(doc.data() as Omit<Order, "id">),
+      }));
+      setTransaction(transactions);
+    } catch (error) {
+      console.error("Failed to fetch transaction:", error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    getTransaction();
+  }, []);
 
   return (
     <div className="">
