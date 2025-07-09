@@ -1,18 +1,11 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
+
 import { db } from "../../config/Firebase";
-import {
-  collection,
-  doc,
-  getDoc,
-  getDocs,
-  query,
-  where,
-} from "firebase/firestore";
-import React, { useEffect, useState } from "react";
+import { collection, getDocs, query, where } from "firebase/firestore";
+import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router";
 import { toast } from "react-toastify";
 import type { Food } from "./Foods";
-import { ChevronLeft } from "lucide-react";
+import { ChevronLeft, Loader2Icon } from "lucide-react";
 
 interface Category {
   $id: string;
@@ -24,9 +17,8 @@ interface Category {
 const Category = () => {
   const { id } = useParams();
 
-  const [Loading, setLoading] = useState(false);
-  const [categoryData, setCategoryData] = useState<Category>();
   const [food, setFood] = useState<Food[]>([]);
+  const [loading, setLoading] = useState<boolean>(false);
 
   const navigate = useNavigate();
   useEffect(() => {
@@ -57,16 +49,23 @@ const Category = () => {
             ...(doc.data() as Omit<Food, "id">),
           }));
           setFood(foods);
-          console.log(foods);
         }
       } catch (error) {
-        console.error("Failed to fetch food:", error);
+        toast.error("Failed to fetch food:" + error);
       } finally {
         setLoading(false);
       }
     };
     getFood();
   }, [id]);
+
+  if (loading) {
+    return (
+      <div className="flex justify-center items-center h-screen">
+        <Loader2Icon className="animate-spin text-2xl" />
+      </div>
+    );
+  }
 
   return (
     <div>

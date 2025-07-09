@@ -1,11 +1,10 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-/* eslint-disable @typescript-eslint/no-unused-vars */
+
 import { Button } from "@/components/ui/button";
 import { db } from "../../config/Firebase";
 import { collection, deleteDoc, doc, getDocs, query } from "firebase/firestore";
 import { useEffect, useState } from "react";
 import { Link } from "react-router";
-import { ArchiveX,  } from "lucide-react";
+import { ArchiveX, Loader2Icon } from "lucide-react";
 import { toast } from "react-toastify";
 
 interface banner {
@@ -49,6 +48,14 @@ const Banners = () => {
   useEffect(() => {
     getSlider();
   }, []);
+
+  if (isLoading) {
+    return (
+      <div className="flex justify-center items-center h-screen">
+        <Loader2Icon className="animate-spin text-2xl" />
+      </div>
+    );
+  }
 
   return (
     <div>

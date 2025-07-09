@@ -1,10 +1,10 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { Button } from "@/components/ui/button";
 import { db } from "../../config/Firebase";
 import { collection, getDocs, orderBy, query } from "firebase/firestore";
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router";
+import { Loader2Icon } from "lucide-react";
 
 const Categories = () => {
   const [category, setCategory] = useState<any[]>([]);
@@ -37,6 +37,15 @@ const Categories = () => {
   useEffect(() => {
     getcategory();
   }, []);
+
+    if (isLoading) {
+      return (
+        <div className="flex justify-center items-center h-screen">
+          <Loader2Icon className="animate-spin text-2xl" />
+        </div>
+      );
+    }
+  
   return (
     <div>
       <div className="flex justify-between items-center my-5">

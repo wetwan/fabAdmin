@@ -1,11 +1,11 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
+
 import { db } from "../../config/Firebase";
 import { doc, getDoc } from "firebase/firestore";
-import React, { useEffect, useState } from "react";
+import  { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import { toast } from "react-toastify";
 import type { Food } from "./Foods";
-import { ChevronLeft, Heart, Soup } from "lucide-react";
+import { ChevronLeft, Heart, Loader2Icon, Soup } from "lucide-react";
 import { images } from "@/assets";
 import { TbCurrencyNaira } from "react-icons/tb";
 
@@ -58,6 +58,16 @@ const Foodd = () => {
 
     getFoodData();
   }, [id]);
+
+
+    if (Loading) {
+      return (
+        <div className="flex justify-center items-center h-screen">
+          <Loader2Icon className="animate-spin text-2xl" />
+        </div>
+      );
+    }
+  
 
   return (
     <div>

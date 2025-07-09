@@ -1,11 +1,10 @@
 
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import { Button } from "@/components/ui/button";
 import { db } from "../../config/Firebase";
 import { collection, getDocs, query } from "firebase/firestore";
 import  { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router";
-import { Heart } from "lucide-react";
+import { Heart, Loader2Icon } from "lucide-react";
 
 export interface Food {
   like: [];
@@ -55,6 +54,15 @@ const Foods = () => {
   useEffect(() => {
     getFood();
   }, []);
+
+    if (isLoading) {
+    return (
+      <div className="flex justify-center items-center h-screen">
+        <Loader2Icon className="animate-spin text-2xl" />
+      </div>
+    );
+  }
+
 
   return (
     <div className="text-black">

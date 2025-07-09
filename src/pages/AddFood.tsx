@@ -24,7 +24,6 @@ import { Loader2Icon } from "lucide-react";
 
 const AddFood = () => {
   const [category, setCategory] = useState<any[]>([]);
-  const [isLoading, setIsLoading] = useState(false);
   const [name, setName] = useState("");
   const [price, setPrice] = useState("");
   const [file, setFile] = useState<File | null>(null);
@@ -35,7 +34,6 @@ const AddFood = () => {
   const [halal, sethalal] = useState<string>("yes");
 
   const getFood = async () => {
-    setIsLoading(true);
     setCategory([]);
 
     try {
@@ -49,9 +47,7 @@ const AddFood = () => {
       // as Omit<Food, "id">
       setCategory(category);
     } catch (error) {
-      console.error("Failed to fetch category:", error);
-    } finally {
-      setIsLoading(false);
+      toast.error("Failed to fetch category:" + error);
     }
   };
 

@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useUser } from "@clerk/clerk-react";
 import type { Order } from "@/types/type";
