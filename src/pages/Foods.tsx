@@ -68,13 +68,13 @@ const Foods = () => {
         {food.map((food) => (
           <div
             key={food.id}
-            className="w-full  border border-red-500 rounded-md p-3 flex flex-col"
+            className="border border-red-500 rounded-md p-3 flex flex-col"
             onClick={() => navigate(`/food/${food.id}`)}
           >
             <img
               src={food.image}
               alt={food.name}
-              className="h-[150px] w-[200px] object-cover rounded-md"
+              className="h-[150px] object-cover rounded-md"
             />
             <div className="flex p-2 items-center justify-between gap-5 mt-2">
               <p className=" text-center font-semibold capitalize">
