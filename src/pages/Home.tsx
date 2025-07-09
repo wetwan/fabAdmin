@@ -67,8 +67,8 @@ const Home = () => {
               className={({ isActive }) =>
                 ` cursor-pointer border flex py-2 rounded-lg items-center justify-start max-md:justify-center md:px-5  gap-4 capitalize font-bold transition-colors ease-in duration-300 ${
                   isActive
-                    ? "text-green-400  "
-                    : " text-blue-500 border-blue-500"
+                    ? "text-red-400  "
+                    : " text-yellow-500 border-yellow-500"
                 }`
               }
             >
@@ -80,8 +80,8 @@ const Home = () => {
               className={({ isActive }) =>
                 ` cursor-pointer border flex py-2 rounded-lg items-center justify-start max-md:justify-center md:px-5  gap-4 capitalize font-bold transition-colors ease-in duration-300 ${
                   isActive
-                    ? "text-green-400  "
-                    : " text-blue-500 border-blue-500"
+                    ? "text-red-400  "
+                    : " text-yellow-500 border-yellow-500"
                 }`
               }
             >
@@ -93,8 +93,8 @@ const Home = () => {
               className={({ isActive }) =>
                 ` cursor-pointer border flex py-2 rounded-lg items-center justify-start max-md:justify-center md:px-5  gap-4 capitalize font-bold transition-colors ease-in duration-300 ${
                   isActive
-                    ? "text-green-400  "
-                    : " text-blue-500 border-blue-500"
+                    ? "text-red-400  "
+                    : " text-yellow-500 border-yellow-500"
                 }`
               }
             >
@@ -106,8 +106,8 @@ const Home = () => {
               className={({ isActive }) =>
                 ` cursor-pointer border flex py-2 rounded-lg items-center justify-start max-md:justify-center md:px-5  gap-4 capitalize font-bold transition-colors ease-in duration-300 ${
                   isActive
-                    ? "text-green-400  "
-                    : " text-blue-500 border-blue-500"
+                    ? "text-red-400  "
+                    : " text-yellow-500 border-yellow-500"
                 }`
               }
             >
@@ -119,8 +119,8 @@ const Home = () => {
               className={({ isActive }) =>
                 ` cursor-pointer border flex py-2 rounded-lg items-center justify-start max-md:justify-center md:px-5  gap-4 capitalize font-bold transition-colors ease-in duration-300 ${
                   isActive
-                    ? "text-green-400  "
-                    : " text-blue-500 border-blue-500"
+                    ? "text-red-400  "
+                    : " text-yellow-500 border-yellow-500"
                 }`
               }
             >
@@ -132,8 +132,8 @@ const Home = () => {
               className={({ isActive }) =>
                 ` cursor-pointer border flex py-2 rounded-lg items-center justify-start max-md:justify-center md:px-5  gap-4 capitalize font-bold transition-colors ease-in duration-300 ${
                   isActive
-                    ? "text-green-400  "
-                    : " text-blue-500 border-blue-500"
+                    ? "text-red-400  "
+                    : " text-yellow-500 border-yellow-500"
                 }`
               }
             >
